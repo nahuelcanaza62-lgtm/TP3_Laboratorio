@@ -5,30 +5,26 @@ import java.util.Scanner;
 public class TP3_EJERCICIO6 {
 
     public static void main(String[] args) {
-        Scanner lector = new Scanner(System.in);
-        
-        int N, M;
 
-      
-        do {
-            System.out.println("Ingrese N:");
-            N = lector.nextInt();
-            
-            System.out.println("Ingrese M:");
-            M = lector.nextInt();
-                  if (N <= 0 || M <= 0) {
-                System.out.println("Error: deben ser números positivos");
-                  } else if (N >= M) {
-                System.out.println("Error: N debe ser menor que M");
-            }
-
-        } while (N >= M);
-
-  
-        for (int i = N; i <= M; i++) {
-            if (i % N == 0) {
-                System.out.println(i);
-            }
+        Scanner lector = new Scanner (System.in);
+        int N = 0;
+        int M = 0;
+    do{    
+        System.out.println("ingrese N y M ambos positivos");
+        N = lector.nextInt();
+        M = lector.nextInt();
+       
+        if(N >= M){
+            System.out.print("N debe ser menor a M");
         }
+               
+
+    } while (M < N || N <= 0 || M <= 0);
+    for(int contador =1;contador<=M; contador++){
+       
+        if(contador% N == 0){
+           System.out.println("Multiplos:"+ contador);  
+        }
+    }
     }
 }
